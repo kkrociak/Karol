@@ -1,3 +1,6 @@
+alert("hello");
+
+
 let map = L.map('mapid');
 map.setView([51.0,24.0],6);
 
