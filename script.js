@@ -1,10 +1,7 @@
 alert("hello");
 
 
-// let map = L.map('mapid');
-// map.setView([51.0,24.0],6);
-
-// let OSMlayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+//let OSMlayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
 // let circle = L.circle([50.5, 30.5],
 //     {radius: 100},
@@ -48,13 +45,44 @@ alert("hello");
 
 
 
-require (["esri/Map", "esri/views/MapView"],
-   function(Map, MapView)
+
+
+
+
+require (["esri/Map", "esri/views/MapView", "esri/WebMap"],
+   function(Map, MapView, WebMap)
    {
     let map1 = new Map({basemap:"topo"});
+    let map2 = new Map({basemap:"satellite"});
+    let map3 = new Map({basemap:"osm"});
+    let map4 = new WebMap({
+        portalItem: {
+            id: "36c9582cc9d140229b9cffb4cd8fe297"
+         }
+    });
 
     let mapContainer = new MapView({
         container: "mapid",  // miejsce gdzie chcemy osadzić mapę (bierzemy klasę z pliku html //
-        map: map1  //czyli nasza zmienna z mapą bazową zdefiniowana wcześniej //
-     }); 
+        map: map4  //czyli nasza zmienna z mapą bazową zdefiniowana wcześniej //
+     });
+     
+    
+    document.getElementById("przycisk").onclick = function() {
+        console.log('klik');
+        mapContainer.map = map2;
+    };
+    document.getElementById("przycisk2").onclick = function() {
+        console.log('klik');
+        mapContainer.map = map1;
+    };
+    document.getElementById("przycisk3").onclick = function() {
+        console.log('klik');
+        mapContainer.map = map3;
+    };
+    document.getElementById("przycisk4").onclick = function() {
+        console.log('klik');
+        mapContainer.map = map4;
+    }; 
    })
+
+ 
