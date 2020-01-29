@@ -15,27 +15,31 @@
     <style>
         #mapid { height: 100%; }
     </style>    
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
-    <script src="https://js.arcgis.com/4.9/"></script>
+    <link rel="stylesheet" href="styl.css" type="text/css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.14/"></script>
 </head>
 
 <body>
 
-<header><p id = "tytul">Lorem Ipsum</p></header>
+<header><p id = "tytul">Świątynie w Kioto</p></header>
 
 <section>
     
     <article>
-        <p>Opis 1</p>
+        <p id="1">Świątynia Kinkaku-Ji</p>
+        <img src="kinkakuji.jpg">
+
     </article>
 
     <article>
-        <p>Opis 3</p>
+        <p id="2">Świątynia Fushimi Inari</p>
+        <img src="fushimi.jpg">
     </article>
 
     <article>
-        <p>Opis 2</p>
+        <p id="3">Świątynia Kifune-jinja</p>
+        <img src="kifune.jpg">
     </article>
 
 </section>
@@ -45,7 +49,9 @@
     <button id="przycisk3">Mapa OSM</button>
     <button id="przycisk4">AGOL</button>
     <br>
+    <div id="viewDiv">
     <div id="mapid"></div>
+    </div>
 </aside>
 
 <footer><p id="stopka">Copyright 2020©</p></footer>
