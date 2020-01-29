@@ -24,21 +24,7 @@ require (["esri/Map", "esri/views/MapView", "esri/WebMap", "esri/geometry/suppor
         map: map4  //czyli nasza zmienna z mapą bazową zdefiniowana wcześniej //
         
       });
-      // let view = new MapView({
-      //    container: "viewDiv",
-      //   map: map,
-      // })
-      // let basemapGallery = new BasemapGallery({
-      //    view: view,
-      //    source: {
-      //      portal: {
-      //        url: "http://www.arcgis.com",
-      //        useVectorBasemaps: true, // Load vector tile basemap group
-      //      },
-      //    } 
-      //  });
- 
-      //  view.ui.add(basemapGallery, "top-right"); // Add to the view
+    
     
     document.getElementById("przycisk").onclick = function() {
         console.log('klik');
@@ -56,9 +42,27 @@ require (["esri/Map", "esri/views/MapView", "esri/WebMap", "esri/geometry/suppor
         console.log('klik');
         mapContainer.map = map4;
     };
+    document.getElementById("1").onclick = function() {
+        console.log('klik');
+        mapContainer.zoom = 20;
+        mapContainer.center = [135.7284552650162, 35.03950038138115];
+    };
+    document.getElementById("2").onclick = function() {
+        console.log('klik');
+        mapContainer.zoom = 20;
+        mapContainer.center = [135.77320171684792, 34.96715282829578];
+    };
+    document.getElementById("3").onclick = function() {
+        console.log('klik');
+        mapContainer.zoom = 20;
+        mapContainer.center = [135.76283045575158, 35.122127624801585];
+    };
     mapContainer.on("click", function(evt){
       let cords = webMercatorUtils.webMercatorToGeographic(evt.mapPoint);
       console.log(cords.x);
       console.log(cords.y);
+    
+    
+    
   });
    });
